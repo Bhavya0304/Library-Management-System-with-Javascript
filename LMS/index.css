@@ -1,0 +1,71 @@
+*{
+    margin:0px;
+    margin:0px;
+}
+
+body{
+    padding:0px;
+    margin:0px;
+    background-color: rgb(130, 159, 161);
+}
+
+.card{
+    margin:20px auto;
+}
+
+#upperline{
+    display: flex;
+}
+
+#lowerline{
+    display: flex;
+}
+
+.card-img-top{
+    height: 180px;
+}
+
+#bb{
+    margin:20px 30px;
+}
+
+#bookdiv{
+    margin:50px 50px;
+}
+
+
+#form1{
+    margin-top:10px;
+}
+#table1{
+    margin-top: 10px;
+}
+
+#studiv{
+    margin:50px 50px;
+}
+#retdiv{
+    margin:20px 20px;
+}
+
+#form2{
+    margin-top:10px;
+}
+#table2{
+    margin-top: 10px;
+}
+
+#center{
+    text-align: center;
+}
+
+#issuediv{
+    margin:20px 20px;
+}
+
+#table3{
+    margin-top:10px;
+}
+#table5{
+    margin-top:10px;
+}

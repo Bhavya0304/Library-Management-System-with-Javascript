@@ -1,0 +1,223 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+    <!-- Main CSS File -->
+    <link rel="stylesheet" href="index.css">
+
+    <title>Want a Book, Grab It!</title>
+  </head>
+  <body>
+
+      <!--  Navbar  -->
+      <nav class="navbar navbar-dark bg-dark">
+        <div class="container-fluid">
+          <a class="navbar-brand" id="center"><h2>GrabIt</h2>
+        </a>
+          
+        </div>
+      </nav>
+      <!--  End of Navbar  -->
+
+      <!-- start of main options  -->
+      <section id="mainbox">
+        <div id="back">
+          <button class="btn btn-primary" id="bb" style="display: none;"onclick="firstpage()">Go-Back</button>
+        </div>
+        <div id="bookdiv" style="display: none;">
+          <button class="btn btn-primary" id="butt1" onclick="showform(this.id)">Add Book</button>
+          
+
+
+          
+            <form id="form1" style="display: none;">
+              Book Name: <input type="text" name="name" id="t1">
+              Auther: <input type="text" name="auther" id="t2">
+              Avaliblity: <input type="number" name="aval" id="n1" max=10 min=1>
+              <button id="go" class="btn btn-success" type="submit" onclick="booksub()">Add Book</button>
+            </form>
+              <table class="table table-dark table-striped" id="table1">
+                <thead>
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Book_Name</th>
+                    <th scope="col">Auther</th>
+                    <th scope="col">Aviability</th>
+                    <th scope="col">Action</th>
+
+                  </tr>
+                </thead>
+                <tbody id="tbody">
+                
+                  
+                </tbody>
+              </table>
+          
+        </div>
+        <div id="studiv" style="display: none;">
+          <button class="btn btn-primary" id="butt2" onclick="showform(this.id)">Add Students</button>
+
+
+          
+            <form id="form2" style="display: none;">
+              Student Name: <input type="text" name="stuname" id="tt1">
+              Roll No.: <input type="text" name="roll" id="tt2">
+              Credit: <input type="number" name="credit" id="nn1" max=3 min=0>
+              <button id="go2" class="btn btn-success" type="submit" onclick="stusub()">Add Student</button>
+            </form>
+              <table class="table table-dark table-striped" id="table2">
+                <thead>
+                  <tr>
+                    <th scope="col">Roll No.</th>
+                    <th scope="col">Student_Name</th>
+                    <th scope="col">Credit</th>
+                    <th scope="col">Action</th>
+
+                  </tr>
+                </thead>
+                <tbody id="tbody2">
+                
+                  
+                </tbody>
+              </table>
+          
+        </div>
+
+        <div id="issuediv" style="display: none;">
+        <input type="text" name="ttt1" id="issuebook1" placeholder="Serach By Book Id">
+        <input type="text" name="ttt2" id="issuebook2" placeholder="Serach By Book Name">
+        <input type="text" name="ttt3" id="issuebook3" placeholder="Serach By Book Auther">
+        <button id="go3" class="btn btn-primary" onclick="getbook()">Search</button>
+        <table class="table table-dark table-striped" id="table3">
+          <thead>
+            <tr>
+              <th scope="col">Id</th>
+              <th scope="col">Book_Name</th>
+              <th scope="col">Auther</th>
+              <th scope="col">Aviability</th>
+              <th scope="col">Action</th>
+
+            </tr>
+          </thead>
+          <tbody id="tbody3">
+          
+            
+          </tbody>
+        </table>
+
+        <input type="text" name="tt11" id="issuebook4" placeholder="Serach By Student Id">
+        <input type="text" name="tt22" id="issuebook5" placeholder="Serach By Student Name">
+        <button id="go4" class="btn btn-primary" onclick="getstu()">Search</button>
+        <table class="table table-dark table-striped" id="table3">
+          <thead>
+            <tr>
+              <th scope="col">Roll No.</th>
+              <th scope="col">Student_Name</th>
+              <th scope="col">Credit</th>
+              <th scope="col">Action</th>
+
+            </tr>
+          </thead>
+          <tbody id="tbody4">
+          
+            
+          </tbody>
+        </table>
+    
+        <button id="vai" class="btn btn-success" onclick="verifyandissue()">Issue Book</button>
+
+        </div>
+
+        <div id="retdiv" style="display: none;">
+          <input type="text" name="ttt5" id="issuebook7" placeholder="Serach By Book Id">
+        <input type="text" name="ttt6" id="issuebook8" placeholder="Serach By Book Name">
+        <input type="text" name="ttt7" id="issuebook9" placeholder="Serach By Student_Name">
+        <input type="text" name="ttt8" id="issuebook0" placeholder="Serach By Student Id">
+        <button id="go5" class="btn btn-primary" onclick="getissued()">Search</button>
+
+
+      
+              <table class="table table-dark table-striped" id="table5">
+                <thead>
+                  <tr>
+                    <th scope="col">Id</th>
+                    <th scope="col">Book_Name</th>
+                    <th scope="col">Stu_Name</th>
+                    <th scope="col">Stu_Id</th>
+                    <th scope="col">Book_Id</th>
+                    <th scope="col">Action</th>
+
+                  </tr>
+                </thead>
+                <tbody id="tbody5">
+                
+                  
+                </tbody>
+              </table>
+          
+        </div>
+      
+    
+      <div id="upperline">
+      <div class="card" style="width: 18rem;">
+        <img src="includes/books.jpg" class="card-img-top" alt="Books">
+        <div class="card-body">
+          <h5 class="card-title">To Add new books or Remove old one</h5> 
+          <button class="btn btn-primary" id="book" onclick="buttonClicked(this.id)">Add/Remove Books</button>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="includes/students.jpg" class="card-img-top" alt="Books">
+        <div class="card-body">
+          <h5 class="card-title">To Add new students or Remove old one</h5>
+          <button class="btn btn-primary" id="students" onclick="buttonClicked(this.id)">Add/Remove Students</button>
+        </div>
+      </div>
+      <div class="card" style="width: 18rem;">
+        <img src="includes/ibook.png" class="card-img-top" alt="Books">
+        <div class="card-body">
+          <h5 class="card-title">To issue a book for student</h5>
+          <button class="btn btn-primary" id="issue" onclick="buttonClicked(this.id)">Issue Books</button>
+        </div>
+      </div>
+      </div>
+
+      <div id="lowerline">
+        <div class="card" style="width: 18rem;">
+          <img src="includes/rbook.jpg" class="card-img-top" alt="Books">
+          <div class="card-body">
+            <h5 class="card-title">If student returns issued book mark it here</h5>
+            <button class="btn btn-primary" id="return" onclick="buttonClicked(this.id)">Return Book</button>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <img src="includes/sandb.png" class="card-img-top" alt="Books">
+          <div class="card-body">
+            <h5 class="card-title">To Show details of students and their issued book</h5>
+            <button class="btn btn-primary" id="return" onclick="buttonClicked(this.id)">Details</button>
+          </div>
+        </div>
+        <div class="card" style="width: 18rem;">
+          <img src="includes/settings.png" class="card-img-top" alt="Books">
+          <div class="card-body">
+            <h5 class="card-title">if you want to change authentication settings</h5>
+            <button class="btn btn-primary" id="settings" onclick="buttonClicked(this.id)">Authentication Settings</button>
+          </div>
+        </div>
+        </div>
+      </section>
+      <!-- End of Main options  -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous"></script>
+    
+    <!-- Main Javascript Files-->
+    <script src="index.js"></script>
+    <!-- End of Main Javascript Files-->
+
+  </body>
+</html>
