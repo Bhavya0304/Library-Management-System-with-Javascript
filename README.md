@@ -19,8 +19,5 @@ And also their is book limit in number of books depending on its avalibilty...
 Some ScreenShots:
 
 ![](screenshots/snapshot%201.JPG)
-![](screenshots/snapshot2.JPG)
-![](screenshots/snapshot3.JPG)
-![](screenshots/snapshot%204.JPG)
-![](screenshots/snapshot%205.JPG)
+
 
