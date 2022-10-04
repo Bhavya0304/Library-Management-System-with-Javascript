@@ -328,6 +328,17 @@ function verifyandissue(){
         oobj = JSON.parse(oobj);
         var oobj2 = localStorage.getItem("students");
         oobj2 = JSON.parse(oobj2);
+        let bookID = document.getElementById('issuebook1').value;
+        let bookName = document.getElementById('issuebook2').value;
+        let bookAuther = document.getElementById('issuebook3').value;
+        let studentID = document.getElementById('issuebook4').value;
+        let studentName = document.getElementById('issuebook5').value;
+        if(isThereDuplicates(studentID,studentName,bookName,bookID,bookAuther) === true){
+            alert("You can not add this book twice");
+            return;
+        }
+
+
         moobj = oobj[check1.value];
         moobj2 = oobj2[check2.value];
         if(moobj.aval < 1){
@@ -369,7 +380,6 @@ function getissued(){
     let bname = document.getElementById('issuebook8').value;
     let sname = document.getElementById('issuebook9').value;
     let sid = document.getElementById('issuebook0').value;
-
 
     if(bid != ""){
         let obj = localStorage.getItem("issued");
@@ -494,12 +504,33 @@ function returnbook(index){
 
 }
 
-
-
-
-
-
-
-
-
-
+function isThereDuplicates(studnetID,studentName,bookName,bookID,bookAuther){
+    let issuedBooks = localStorage.getItem('issued');
+    issuedBooks = JSON.parse(issuedBooks);
+    has = false;
+    issuedBooks.forEach((element,i,array) =>{
+        if(issuedBooks[i].stu_name === studentName){
+            if(issuedBooks[i].book_name === bookName){
+                has = true;
+            }
+            else if(issuedBooks[i].book_id===bookID){
+                has = true;
+            }
+            else if(issuedBooks[i].auther===bookAuther){
+                has = true;
+            }
+        }
+        else if(issuedBooks[i].stu_id === studnetID){
+            if(issuedBooks[i].book_name === bookName){
+                has = true;
+            }
+            else if(issuedBooks[i].book_id===bookID){
+                has = true;
+            }
+            else if(issuedBooks[i].auther===bookAuther){
+                has = true;
+            }
+        }
+    })
+    return has;
+}
